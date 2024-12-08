@@ -38,13 +38,28 @@ namespace JobManagement.Controllers
             {
                 throw new BadRequestsException("Candidate cannot be null");
             }
-            if (string.IsNullOrEmpty(candidateDto.Email) || string.IsNullOrEmpty(candidateDto.FirstName)
+            if (string.IsNullOrEmpty(candidateDto.Email) || !IsValidEmail(candidateDto.Email))
+            {
+                throw new BadRequestsException("Invalid email address.");
+            }
+            if ( string.IsNullOrEmpty(candidateDto.FirstName)
                 || string.IsNullOrEmpty(candidateDto.LastName) || string.IsNullOrEmpty(candidateDto.Comments))
             {
                 throw new BadRequestsException("Required values are not filled.");
             }
             return true;
         }
-
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
