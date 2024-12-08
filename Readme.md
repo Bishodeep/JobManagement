@@ -4,7 +4,7 @@ This application show case .net 6 api build following clean Architecture.<br>
 
 # Rquirements.
 
-.net sdk 6
+.net sdk 8
 visual studio /visual studio code
 SQL server
 
@@ -12,7 +12,7 @@ SQL server
 
 1. Clone the repository
 2. Build the application using dotnet build or can be build using Visual studio.
-3. Since this app uses code first approach using entity framework use following command in package manager console to create db and schemas.
+3. Since this app uses code first approach using entity framework use following command in package manager console to create db and schemas. Note: This is optional as app uses auto migration
    a. add-migration <Name>
    b. update-database
 4. dotnet run
@@ -32,13 +32,6 @@ It is the outer layer and is plugable from application layer. It implements the 
 WebAPI:
 It is the client facing layer. This layer can be api, mvc or someother client facing layer. This layer forwards the request to Application layer. Here Mediatr pattern is used to forware request from controller to Commands in application.
 
-Mediatr patter.
-It is way of seperating the requests whether into command or query. All the requests are sperated and handled seperately in their own hanlders.
 
-Application functions:
-
-1.  One super adim is seeded for creation of broker as well as normal users using different roles.
-2.  Once broker is created then brokers can create properties , update them as well as delete.
-3.  Normal users can only view properties.
 
 Note: This is done so that project can be completed with in given time frame. A lot of functionalities are self assumed and can be cleared during interview.
