@@ -1,6 +1,6 @@
 # Broker Application Description
 
-This application show case .net 6 api build following clean Architecture. I used clean architecture because this will handle the scenario mentioned in assesment. As the application layer here defines the repository contracts and infrastructure layer is implementing it. We can in later stages of application cleanly unplug the repository implementation and replace it with other database options.<br>
+This application show case .net 8 api build following clean Architecture. I used clean architecture because this will handle the scenario mentioned in assesment. As the application layer here defines the repository contracts and infrastructure layer is implementing it. We can in later stages of application cleanly unplug the repository implementation and replace it with other database options.<br>
 
 # Rquirements.
 
